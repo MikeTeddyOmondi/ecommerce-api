@@ -16,8 +16,9 @@ const UserSchema = new Schema(
 const ProductSchema = new Schema(
   {
     publicId: { type: String, required: false },
-    name: { type: String, required: true },
-    stockQuantity: { type: Number, required: true, defaultValue: 0 },
+    name: { type: String, required: true, unique: true },
+    imageUrl: { type: String, required: true },
+    stockQuantity: { type: Number, required: false, defaultValue: 0 },
     colors: { type: [String], required: false },
   },
   { timestamps: true }
